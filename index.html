@@ -229,6 +229,14 @@ footer small{font-size:13px;opacity:.6;width:100%}
 
 .feed .ph img{transition:opacity .3s}
 .feed .ph:hover img{opacity:.75}
+/* O que acreditamos */
+.belief{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;padding-block:104px 8px}
+.belief h2{font-size:clamp(34px,4.4vw,56px);font-weight:700;color:var(--vinho)}
+.belief-text{display:grid;gap:18px;max-width:62ch;min-width:0}
+.belief-text p{font-weight:300;font-size:18px;color:var(--ink)}
+.belief-text .lead{font-weight:500;font-size:clamp(22px,2.2vw,28px);line-height:1.35;color:var(--vinho)}
+.belief + .pillars{padding-top:72px}
+@media (max-width:900px){.belief{grid-template-columns:1fr;gap:24px;padding-block:64px 0}.belief + .pillars{padding-top:48px}}
 /* Efeitos ao rolar */
 .rv{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .rv.in{opacity:1;transform:none}
@@ -272,6 +280,16 @@ footer small{font-size:13px;opacity:.6;width:100%}
       <a id="hero-link" href="#"><span class="label" id="hero-label">Projeto em destaque</span><strong id="hero-name"></strong></a>
       <div class="dots" id="dots" role="group" aria-label="Escolher foto"></div>
     </div></div>
+  </section>
+
+  <section class="wrap belief" aria-labelledby="t-crenca">
+    <h2 id="t-crenca">O que acreditamos</h2>
+    <div class="belief-text">
+      <p class="lead">Antes de ser um projeto, um espaço é uma extensão da vida de quem o habita.</p>
+      <p>Ele guarda rotina, memória, desejo, pausa, encontro, trabalho, descanso e identidade. Por isso, projetar um ambiente não é apenas resolver medidas, escolher acabamentos ou definir mobiliário. É entender quem vai viver ali, como essa pessoa se move pelo espaço, o que ela quer sentir todos os dias e quais histórias esse lugar precisa começar a contar.</p>
+      <p>Na Gabi Solci Arq Studio, cada projeto nasce desse encontro entre sensibilidade e precisão.</p>
+      <p>A proposta é criar ambientes com alma, beleza e funcionalidade, traduzindo a essência de cada cliente em espaços possíveis, executáveis e profundamente conectados com sua forma de viver.</p>
+    </div>
   </section>
 
   <div class="wrap pillars">
@@ -517,6 +535,7 @@ var PROJETOS = [
   }
   function q(s){ return document.querySelectorAll(s); }
   function armHome(){
+    arm(q(".belief h2, .belief-text > p"), .1);
     arm(q(".pillars > div"), .12);
     arm(q(".projects .sec-head, .insta .sec-head"), 0);
     arm(q("#grid .card"), .12, 3);
