@@ -230,13 +230,16 @@ footer small{font-size:13px;opacity:.6;width:100%}
 .feed .ph img{transition:opacity .3s}
 .feed .ph:hover img{opacity:.75}
 /* O que acreditamos */
-.belief{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;padding-block:104px 8px}
+.belief{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch;padding-block:104px 8px}
+.belief-col{display:grid;gap:28px;align-content:start;min-width:0}
+.belief-img{margin:0;position:relative;min-height:420px;overflow:hidden;background:var(--surface)}
+.belief-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 50%}
 .belief h2{font-size:clamp(34px,4.4vw,56px);font-weight:700;color:var(--vinho)}
 .belief-text{display:grid;gap:18px;max-width:62ch;min-width:0}
 .belief-text p{font-weight:300;font-size:18px;color:var(--ink)}
 .belief-text .lead{font-weight:500;font-size:clamp(22px,2.2vw,28px);line-height:1.35;color:var(--vinho)}
 .belief + .pillars{padding-top:72px}
-@media (max-width:900px){.belief{grid-template-columns:1fr;gap:24px;padding-block:64px 0}.belief + .pillars{padding-top:48px}}
+@media (max-width:900px){.belief-img{min-height:0;aspect-ratio:3/2}.belief{grid-template-columns:1fr;gap:32px;padding-block:64px 0}.belief + .pillars{padding-top:48px}}
 .values{list-style:none;margin:16px 0 0;padding:24px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 32px}
 .values li{font-size:clamp(24px,2.4vw,32px);font-weight:700;line-height:1.1;letter-spacing:-.015em;color:var(--vinho)}
 .values i{font-style:normal;color:var(--laranja)}
@@ -288,6 +291,7 @@ footer small{font-size:13px;opacity:.6;width:100%}
   </section>
 
   <section class="wrap belief" aria-labelledby="t-crenca">
+    <div class="belief-col">
     <h2 id="t-crenca">O que acreditamos</h2>
     <div class="belief-text">
       <p class="lead">Antes de ser um projeto, um espaço é uma extensão da vida de quem o habita.</p>
@@ -296,6 +300,8 @@ footer small{font-size:13px;opacity:.6;width:100%}
       <p>A proposta é criar ambientes com alma, beleza e funcionalidade, traduzindo a essência de cada cliente em espaços possíveis, executáveis e profundamente conectados com sua forma de viver.</p>
       <ul class="values" aria-label="Nossos valores"><li>Alma<i>.</i></li><li>Beleza<i>.</i></li><li>Funcionalidade<i>.</i></li></ul>
     </div>
+    </div>
+    <figure class="belief-img"><img loading="lazy" src="img/viacao-garcia/img-7240-crenca.jpg" alt="Recepção da Viação Garcia vista através de um painel de ripas de madeira"></figure>
   </section>
 
   <section class="wrap projects" id="projetos" aria-labelledby="t-proj">
@@ -535,7 +541,7 @@ var PROJETOS = [
   }
   function q(s){ return document.querySelectorAll(s); }
   function armHome(){
-    arm(q(".belief h2, .belief-text > p, .values"), .1);
+    arm(q(".belief h2, .belief-text > p, .values, .belief-img"), .1);
     arm(q(".pillars > div"), .12);
     arm(q(".projects .sec-head, .insta .sec-head"), 0);
     arm(q("#grid .card"), .12, 3);
