@@ -237,6 +237,9 @@ footer small{font-size:13px;opacity:.6;width:100%}
 .belief-text .lead{font-weight:500;font-size:clamp(22px,2.2vw,28px);line-height:1.35;color:var(--vinho)}
 .belief + .pillars{padding-top:72px}
 @media (max-width:900px){.belief{grid-template-columns:1fr;gap:24px;padding-block:64px 0}.belief + .pillars{padding-top:48px}}
+.pillars{border-top:1px solid var(--line);margin-top:56px;padding-block:56px 96px!important;align-items:baseline}
+.pillars h2{font-size:clamp(40px,5.6vw,80px)!important;letter-spacing:-.025em}
+@media (max-width:900px){.pillars{gap:8px!important;margin-top:40px;padding-block:36px 64px!important}}
 /* Efeitos ao rolar */
 .rv{opacity:0;transform:translateY(36px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .rv.in{opacity:1;transform:none}
@@ -292,10 +295,10 @@ footer small{font-size:13px;opacity:.6;width:100%}
     </div>
   </section>
 
-  <div class="wrap pillars">
-    <div><h2>Funcionalidade<i>.</i></h2><p>Espaços organizados a partir da rotina de quem vai usá-los, com cada metro quadrado bem aproveitado.</p></div>
-    <div><h2>Identidade<i>.</i></h2><p>Projetos que refletem a história e o jeito de viver de cada cliente, sem fórmulas prontas.</p></div>
-    <div><h2>Conforto<i>.</i></h2><p>Luz natural, ventilação e materiais escolhidos para que a casa seja boa de habitar todos os dias.</p></div>
+  <div class="wrap pillars" role="list" aria-label="Nossos valores">
+    <div role="listitem"><h2>Alma<i>.</i></h2></div>
+    <div role="listitem"><h2>Beleza<i>.</i></h2></div>
+    <div role="listitem"><h2>Funcionalidade<i>.</i></h2></div>
   </div>
 
   <section class="wrap projects" id="projetos" aria-labelledby="t-proj">
